@@ -6,10 +6,14 @@ import mysql.connector
 import getpass
 from mysql.connector import (connection)
 
+
+#Chamando meu banco
 pip1_connection = connection.MySQLConnection(host='localhost', user='root', password='senha', database='pip1')
-#senha = getpass.getpass('Digite a senha: ')
 
+senha = getpass.getpass('Digite a senha: ')
+#senha para não invadir o banco
 
+#teste se vai ser conectado
 if pip1_connection.is_connected():
     pip1 = pip1_connection.get_server_info()
     print("Conectado ao servidor MySQL versão ",pip1)
